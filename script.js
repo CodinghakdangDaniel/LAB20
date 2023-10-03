@@ -31,15 +31,16 @@ async function getItems() {
         console.log(data);
         
         const valueNumber = Number(inputValue.value)
-        const image = document.createElement('img')
         console.log('입력값', valueNumber)
-
+        
         for (let i= 0; i < data.length; i++) {
             console.log('콘솔i', i);
             console.log('i의 평점', data[i].rating.rate)
             
             if (data[i].rating.rate >= valueNumber) {
+                const image = document.createElement('img')
                 image.src = data[i].image
+                console.log('이미지', image)
                 itemBox.appendChild(image)
             }
         }
